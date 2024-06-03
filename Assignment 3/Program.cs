@@ -45,9 +45,10 @@
         static void Update()
         {
             Raylib.BeginDrawing();
-            Raylib.DrawRectangle(500, 600, 50, 450, Color.Red);
-            Raylib.DrawRectangle(700, 600, 50, 450, Color.Red);
-            Raylib.DrawRectangle(0, 100, 800, 50, Color.Red);
+            Raylib.DrawRectangle(0,580,800,20 ,Color.Red);
+            Raylib.DrawRectangle(600,0,20,500 ,Color.Red);
+            Raylib.DrawRectangle(780,0,20,500 ,Color.Red);
+
             // Your game code run each frame here
         }
     }
