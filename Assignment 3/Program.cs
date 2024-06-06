@@ -3,6 +3,7 @@
 
     using Raylib_cs;
     using System.Numerics;
+    using static LevelObjects;
 
     public class Program
     {
@@ -29,7 +30,7 @@
                 Raylib.ClearBackground(Color.RayWhite);
                 // Your game code here. This is a function YOU define.
                 Update();
-                Update(Player);
+                
                 // Stop drawing to the canvas, begin displaying the frame
                 Raylib.EndDrawing();
             }
@@ -46,8 +47,12 @@
         static void Update()
         {
             Player player = Player;
+            LevelObjects levelObjects = new LevelObjects();
 
-
+            foreach (var LevelObjects in LevelObjects)
+            {
+                LevelObjects.Draw();
+            }
             // Your game code run each frame here
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Raylib_cs;
 using System;
+using System.Numerics;
 
 public class Player
 {
@@ -8,29 +9,30 @@ public class Player
 
 
         // Circle properties
-        float circleX = 400;
-        float circleY = 300;
-        float circleRadius = 20;
+        float RectangleX = 400;
+        float RectangleY = 300;
+    
         float speed = 5.0f;
 
         // Main game loop
         while (!Raylib.WindowShouldClose())
         {
             // Update
-            if (Raylib.IsKeyDown(KeyboardKey.D)) circleX += speed;
-            if (Raylib.IsKeyDown(KeyboardKey.A)) circleX -= speed;
-            if (Raylib.IsKeyDown(KeyboardKey.W)) circleY -= speed;
-            if (Raylib.IsKeyDown(KeyboardKey.S)) circleY += speed;
+            if (Raylib.IsKeyDown(KeyboardKey.D)) RectangleX += speed;
+            if (Raylib.IsKeyDown(KeyboardKey.A)) RectangleX -= speed;
+            if (Raylib.IsKeyDown(KeyboardKey.W)) RectangleY -= speed;
+            if (Raylib.IsKeyDown(KeyboardKey.S)) RectangleY += speed;
 
             // Draw
 
             Raylib.ClearBackground(Color.RayWhite);
 
-            Raylib.DrawCircle((int)circleX, (int)circleY, circleRadius, Color.Red);
+            Raylib.DrawRectangle((int)RectangleX, (int)RectangleY,50,50, Color.Red);
 
 
         }
 
+        
 
 
     }
