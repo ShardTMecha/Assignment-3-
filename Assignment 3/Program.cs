@@ -46,14 +46,45 @@
 
         static void Update()
         {
-            Player player = Player;
-            LevelObjects levelObjects = new LevelObjects();
-
-            foreach (var LevelObjects in LevelObjects)
+             bool CheckCollision(float RectangleX, float RectangleY, float rectangleWidth, float rectangleHeight)
             {
-                LevelObjects.Draw();
+                return Raylib.CheckCollisionRecs(new Vector2(RectangleX, RectangleY);
             }
-            // Your game code run each frame here
-        }
+
+            static void Draw()
+            {
+                Raylib.DrawRectangle(0, 50, 20, 800, Color.Blue);
+                Raylib.DrawRectangle(500, 600, 500, 20, Color.Blue);
+                Raylib.DrawRectangle(400, 600, 500, 20, Color.Blue);
+            }
+            static void PLayer(string[] args)
+            {
+
+
+                // Circle properties
+                float RectangleX = 400;
+                float RectangleY = 300;
+
+                float speed = 5.0f;
+
+                // Main game loop
+                while (!Raylib.WindowShouldClose())
+                {
+                    // Update
+                    if (Raylib.IsKeyDown(KeyboardKey.D)) RectangleX += speed;
+                    if (Raylib.IsKeyDown(KeyboardKey.A)) RectangleX -= speed;
+                    if (Raylib.IsKeyDown(KeyboardKey.W)) RectangleY -= speed;
+                    if (Raylib.IsKeyDown(KeyboardKey.S)) RectangleY += speed;
+
+                    // Draw
+
+                    Raylib.ClearBackground(Color.RayWhite);
+
+                    Raylib.DrawRectangle((int)RectangleX, (int)RectangleY, 50, 50, Color.Red);
+
+
+                }
+                // Your game code run each frame here
+            }
     }
 }
