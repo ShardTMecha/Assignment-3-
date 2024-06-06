@@ -4,37 +4,24 @@ using System.Numerics;
 
 public class Player
 {
-    static void PLayer(string[] args)
+    // Circle properties
+    public Rectangle bounds;
+    float speed = 5.0f;
+
+    public Player(int x, int y, int w, int h)
     {
+        bounds = new Rectangle(x, y, w, h);
+    }
 
+    public void Update()
+    {
+        // Move
+        if (Raylib.IsKeyDown(KeyboardKey.D)) bounds.X += speed;
+        if (Raylib.IsKeyDown(KeyboardKey.A)) bounds.X -= speed;
+        if (Raylib.IsKeyDown(KeyboardKey.W)) bounds.Y -= speed;
+        if (Raylib.IsKeyDown(KeyboardKey.S)) bounds.Y += speed;
 
-        // Circle properties
-        float RectangleX = 400;
-        float RectangleY = 300;
-    
-        float speed = 5.0f;
-
-        // Main game loop
-        while (!Raylib.WindowShouldClose())
-        {
-            // Update
-            if (Raylib.IsKeyDown(KeyboardKey.D)) RectangleX += speed;
-            if (Raylib.IsKeyDown(KeyboardKey.A)) RectangleX -= speed;
-            if (Raylib.IsKeyDown(KeyboardKey.W)) RectangleY -= speed;
-            if (Raylib.IsKeyDown(KeyboardKey.S)) RectangleY += speed;
-
-            // Draw
-
-            Raylib.ClearBackground(Color.RayWhite);
-
-            Raylib.DrawRectangle((int)RectangleX, (int)RectangleY,50,50, Color.Red);
-
-
-        }
-
-        
-
-
+        // Draw
+        Raylib.DrawRectangleRec(bounds, Color.Red);
     }
 }
-
