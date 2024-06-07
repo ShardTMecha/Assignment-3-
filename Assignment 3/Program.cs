@@ -16,6 +16,12 @@
         // Add class variables
         static Player player;
         static LevelObject levelObject;
+        static LevelObject levelObjecttwo;
+        static LevelObject levelObjectthree;
+        static LevelObject levelObjectfour;
+        
+
+        
 
         static void Main()
         {
@@ -45,10 +51,15 @@
         static void Setup()
         {
             // Your one-time setup code here
-            player = new Player(100, 100, 50, 50);
+            player = new Player(0, 500, 50, 50);
 
             //
             levelObject = new LevelObject(0, 550, 800, 50);
+            levelObjecttwo = new LevelObject(0, 420, 650, 20);
+            levelObjectthree = new LevelObject(600, 0, 50,420);
+            levelObjectfour = new LevelObject(780, 0, 20, 600);
+
+            
         }
 
         static void Update()
@@ -57,13 +68,40 @@
             player.Update();
 
             levelObject.Draw();
+            levelObjecttwo.Draw();
+            levelObjectthree.Draw();
+            levelObjectfour.Draw();
 
             bool isColliding = levelObject.CheckCollision(player);
             if (isColliding)
             {
-                // do stuff
+               
             }
-            Raylib.DrawText($"Is colliding? {isColliding}", 5, 5, 32, Color.Black);
+
+            bool isCollidingtwo = levelObjecttwo.CheckCollision(player);
+            if (isColliding)
+            {
+
+            }
+
+
+            bool isCollidingthree = levelObjectthree.CheckCollision(player);
+            if (isCollidingthree)
+            {
+
+            }
+
+
+            bool isCollidingfour = levelObjectfour.CheckCollision(player);
+            if (isCollidingfour)
+            {
+
+            }
+
+            Raylib.DrawText($"Is colliding? {isColliding}{isCollidingtwo}{isCollidingthree}{isCollidingfour}", 5, 5, 32, Color.Black);
+           // Raylib.DrawText($"Is colliding? {isCollidingtwo}", 5, 5, 32, Color.Black);
+            //Raylib.DrawText($"Is colliding? {isCollidingthree}", 5, 5, 32, Color.Black);
+            //Raylib.DrawText($"Is colliding? {isCollidingfour}", 5, 5, 32, Color.Black);
         }
 
     }

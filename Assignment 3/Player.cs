@@ -22,6 +22,6 @@ public class Player
         if (Raylib.IsKeyDown(KeyboardKey.S)) bounds.Y += speed;
 
         // Draw
-        Raylib.DrawRectangleRec(bounds, Color.Red);
+        Raylib.DrawRectangleRec(bounds, Color.Black);
     }
 }
