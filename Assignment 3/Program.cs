@@ -19,7 +19,7 @@
         static LevelObject levelObjecttwo;
         static LevelObject levelObjectthree;
         static LevelObject levelObjectfour;
-        
+        static WinArea winArea;
 
         
 
@@ -60,7 +60,7 @@
             levelObjectfour = new LevelObject(780, 0, 20, 600);
             //
 
-            winArea = new WinArea
+            winArea = new WinArea(600, 0, 300, 100);
             
         }
 
@@ -73,6 +73,8 @@
             levelObjecttwo.Draw();
             levelObjectthree.Draw();
             levelObjectfour.Draw();
+
+            winArea.Draw();
 
             bool isColliding = levelObject.CheckCollision(player);
             if (isColliding)
@@ -99,6 +101,14 @@
             {
 
             }
+
+            bool isCollidingWin = winArea.CheckCollision(player);
+            if (isCollidingWin)
+            {
+
+            }
+
+            Raylib.DrawText($"Win? {isCollidingWin}", 5, 40, 32, Color.Black);
 
             Raylib.DrawText($"Is colliding? {isColliding}{isCollidingtwo}{isCollidingthree}{isCollidingfour}", 5, 5, 32, Color.Black);
            // Raylib.DrawText($"Is colliding? {isCollidingtwo}", 5, 5, 32, Color.Black);
