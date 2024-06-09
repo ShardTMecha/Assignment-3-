@@ -58,7 +58,9 @@
             levelObjecttwo = new LevelObject(0, 420, 650, 20);
             levelObjectthree = new LevelObject(600, 0, 50,420);
             levelObjectfour = new LevelObject(780, 0, 20, 600);
+            //
 
+            winArea = new WinArea
             
         }
 
@@ -75,7 +77,7 @@
             bool isColliding = levelObject.CheckCollision(player);
             if (isColliding)
             {
-               
+              
             }
 
             bool isCollidingtwo = levelObjecttwo.CheckCollision(player);
